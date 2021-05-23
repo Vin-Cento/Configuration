@@ -1,0 +1,51 @@
+font:
+    normal:
+        family: Iosevka Nerd Font Mono 
+        style: Regular
+        
+    bold:
+        family: Iosevka Nerd Font Mono
+        style: Bold
+
+    italic:
+        family: Iosevka Nerd Font Mono
+        style: Italic
+        
+    size: 8.0
+
+colors:
+    primary:
+      background: '#1b1b1b'
+      foreground: '#00ff00'
+
+    # Normal colors
+    normal:
+      black:   '#252525'
+      red:     '#ff27bb'
+      green:   '#00d1b7'
+      yellow:  '#8f88ff'
+      blue:    '#40afff'
+      magenta: '#c34efe'
+      cyan:    '#0aefff'
+      white:   '#ffffff''
+
+    # Bright colors
+    bright:
+      black:   '#EDEDED'
+      red:     '#ff27bb' 
+      green:   '#40ddd5'
+      yellow:  '#8f88ff'
+      blue:    '#40afff'
+      magenta: '#c34efe'
+      cyan:    '#01fcff'
+      white:   '#ffffff'
+
+background_opacity: 0.8
+
+selection:
+    save_to_clipboard: true
+
+mouse:
+    url:
+        launcher:
+            program: brave
