@@ -62,7 +62,7 @@ source /usr/share/fzf/key-bindings.zsh
 alias cat='bat'
 alias ls='exa --icons'
 
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/.git/ --work-tree=$HOME'
+alias gitdot='/usr/bin/git --git-dir=$HOME/.cfg/.git/ --work-tree=$HOME'
 
 # faster
 alias l='exa -ah'
