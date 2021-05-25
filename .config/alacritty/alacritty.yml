@@ -27,7 +27,7 @@ colors:
       blue:    '#40afff'
       magenta: '#c34efe'
       cyan:    '#0aefff'
-      white:   '#ffffff''
+      white:   '#ffffff'
 
     # Bright colors
     bright:
@@ -40,7 +40,7 @@ colors:
       cyan:    '#01fcff'
       white:   '#ffffff'
 
-background_opacity: 0.8
+background_opacity: 0.85
 
 selection:
     save_to_clipboard: true

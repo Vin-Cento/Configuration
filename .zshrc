@@ -80,6 +80,6 @@ alias t='tree -d -L 4'
 
 # custom
 alias todo='cat ~/.local/share/calcurse/apts'
-alias die='systemctl hibernate'
-alias rest='systemctl suspend'
+alias die='systemctl hibernate && i3lock'
+alias rest='systemctl suspend && i3lock'
 
