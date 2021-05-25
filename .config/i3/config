@@ -3,6 +3,7 @@ for_window [class=".*"] border pixel 5
 gaps inner 15
 gaps outer 5
 
+for_window [title="Android Emulator*"] floating enable
 #gaps inner all set 20
 #gaps outer current plus 5
 #gaps horizontal current plus 40
