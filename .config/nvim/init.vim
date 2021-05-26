@@ -2,6 +2,8 @@ set guicursor=
 set scrolloff=10
 set nohlsearch
 set noerrorbells
+set cursorline
+"set highlight CursorLine ctermbg=LightBlue
 set wrap
 
 set foldmethod=indent
