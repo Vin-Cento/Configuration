@@ -3,7 +3,6 @@ set scrolloff=10
 set nohlsearch
 set noerrorbells
 set cursorline
-"set highlight CursorLine ctermbg=LightBlue
 set wrap
 
 set foldmethod=indent
@@ -41,7 +40,7 @@ Plug 'sheerun/vim-polyglot'
 " airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'tomasiser/vim-code-dark'
+Plug 'nanotech/jellybeans.vim'
 
 " fzf & vim-rooter
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -63,10 +62,10 @@ nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
 syntax enable
 let g:one_allow_italics = 1
 set background=dark
-colorscheme codedark
+colorscheme jellybeans
 
-" Tabs
-let g:airline_theme='oceanicnext'
+ "Tabs
+let g:airline_theme='codedark'
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#fnamemode=':t'
 

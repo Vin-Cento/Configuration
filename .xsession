@@ -2,7 +2,7 @@
 WallpaperPath="Pictures/Wallpapers"
 
 # increase keyboard speed
-#xset r rate 200 30
+xset r rate 200 30
 
 # swape cap and esc keys
 xmodmap -e 'clear Lock'
