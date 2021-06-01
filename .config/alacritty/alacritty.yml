@@ -13,34 +13,44 @@ font:
         
     size: 7.0
 
+# Base16 Windows High Contrast - alacritty color config
+# Fergus Collins (https://github.com/C-Fergus)
 colors:
-    primary:
-      background: '#1b1b1b'
-      foreground: '#00ff00'
+  # Default colors
+  primary:
+    background: '#000000'
+    foreground: '#c0c0c0'
 
-    # Normal colors
-    normal:
-      black:   '#252525'
-      red:     '#ff0000'
-      green:   '#20b2aa'
-      yellow:  '#8f88ff'
-      blue:    '#40afff'
-      magenta: '#c34efe'
-      cyan:    '#0aefff'
-      white:   '#ffffff'
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text: '#000000'
+    cursor: '#c0c0c0'
 
-    # Bright colors
-    bright:
-      black:   '#EDEDED'
-      red:     '#ff27bb' 
-      green:   '#40ddd5'
-      yellow:  '#8f88ff'
-      blue:    '#40afff'
-      magenta: '#c34efe'
-      cyan:    '#01fcff'
-      white:   '#ffffff'
+  # Normal colors
+  normal:
+    black:   '#000000'
+    red:     '#fc5454'
+    green:   '#54fc54'
+    yellow:  '#fcfc54'
+    blue:    '#5454fc'
+    magenta: '#fc54fc'
+    cyan:    '#54fcfc'
+    white:   '#c0c0c0'
 
-#background_opacity: 0.95
+  # Bright colors
+  bright:
+    black:   '#545454'
+    red:     '#808000'
+    green:   '#1c1c1c'
+    yellow:  '#383838'
+    blue:    '#a2a2a2'
+    magenta: '#dedede'
+    cyan:    '#008000'
+    white:   '#fcfcfc'
+
+draw_bold_text_with_bright_colors: false
+
+background_opacity: 0.85
 
 selection:
     save_to_clipboard: true
