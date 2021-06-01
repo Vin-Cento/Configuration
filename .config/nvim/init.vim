@@ -1,9 +1,11 @@
-set guicursor=
+set guicursor=n-v-c:block
 set scrolloff=10
 set nohlsearch
 set noerrorbells
 set cursorline
 set wrap
+
+nmap =j :%!python -m json.tool<CR>
 
 set foldmethod=indent
 set foldnestmax=10
@@ -19,6 +21,10 @@ set nu
 
 set hidden 
 set exrc
+
+filetype indent on
+set filetype=html
+set smartindent
 
 let g:mapleader=' '
 let g:maplocalleader = ','
@@ -83,10 +89,10 @@ vmap <C-_> <Plug>NERDCommenterToggle<CR>gv
 " NERDTree
 let NERDTreeQuitOnOpen=1
 let g:NERDTreeMinimalUI=1
-nmap <leader>nt :NERDTreeToggle<CR>
+nmap <leader>t :NERDTreeToggle<CR>
 
-nmap <leader>p :bp<CR>
-nmap <leader>n :bn<CR>
+nmap <leader>bp :bp<CR>
+nmap <leader>bn :bn<CR>
 nmap <leader>w :w<CR>
 nmap <leader>ff :FZF<CR>
 nmap <leader>rg :Rg<CR>
@@ -95,13 +101,12 @@ nmap <leader>rh :History<CR>
 nmap <leader>bd :bdelete!<CR>
 nmap <leader>q :q!<CR>
 
+" GO TO DEFINITION AND REFERENCES
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
 
-
 nnoremap <C-p> :Gfiles<CR>
 nnoremap <leader>sv :source $MYVIMRC<CR>
-
 
 " Run python from the terminal
 autocmd FileType python map <buffer> <F10> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
