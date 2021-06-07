@@ -1,7 +1,6 @@
 ### Antigen Package Manager ###
 source /usr/share/zsh/share/antigen.zsh
-source ~/.local/share/icons-in-terminal/icons_bash.sh
-export PATH=$PATH:/home/avatar/.emacs.d/bin:/home/avatar/.local/share/scripts
+export PATH=$PATH:/home/avatar/.local/share/scripts:/usr/bin/aws_completer
 
 
 # packages
@@ -75,6 +74,12 @@ prompt spaceship
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
 
+# aws completion
+autoload bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
+compinit
+
+complete -C '/usr/bin/aws_completer' aws
 
 ### Personal list of alias ###
 
@@ -102,4 +107,5 @@ alias t='tree -d -L 4'
 alias todo='cat ~/.local/share/calcurse/apts'
 alias die='systemctl hibernate && i3lock'
 alias rest='systemctl suspend && i3lock'
-
+alias record='ffmpeg -f x11grab -i :0.0 -f alsa -ac 2 -i default'
+alias w='curl wttr.in/'

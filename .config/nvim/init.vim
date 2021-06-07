@@ -1,11 +1,9 @@
-set guicursor=n-v-c:block
+set guicursor=n-v-c-sm:block
 set scrolloff=10
 set nohlsearch
 set noerrorbells
 set cursorline
 set wrap
-
-nmap =j :%!python -m json.tool<CR>
 
 set foldmethod=indent
 set foldnestmax=10
@@ -23,7 +21,6 @@ set hidden
 set exrc
 
 filetype indent on
-set filetype=html
 set smartindent
 
 let g:mapleader=' '
@@ -91,8 +88,8 @@ let NERDTreeQuitOnOpen=1
 let g:NERDTreeMinimalUI=1
 nmap <leader>t :NERDTreeToggle<CR>
 
-nmap <leader>bp :bp<CR>
-nmap <leader>bn :bn<CR>
+nmap <leader>p :bp<CR>
+nmap <leader>n :bn<CR>
 nmap <leader>w :w<CR>
 nmap <leader>ff :FZF<CR>
 nmap <leader>rg :Rg<CR>
