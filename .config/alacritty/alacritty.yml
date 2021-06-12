@@ -11,7 +11,7 @@ font:
         family: Hack Nerd Font
         style: Italic
         
-    size: 7.0
+    size: 6.0
 
 # Base16 Windows High Contrast - alacritty color config
 # Fergus Collins (https://github.com/C-Fergus)
@@ -54,8 +54,3 @@ background_opacity: 0.85
 
 selection:
     save_to_clipboard: true
-
-mouse:
-    url:
-        launcher:
-            program: brave

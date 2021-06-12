@@ -1,17 +1,31 @@
+
+export PATH=$PATH:/home/avatar/.local/share/scripts
+
 ### Antigen Package Manager ###
 source /usr/share/zsh/share/antigen.zsh
-export PATH=$PATH:/home/avatar/.local/share/scripts:/usr/bin/aws_completer
+
+setopt autocd
+
+# Basic auto/tab complete:
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)		# Include hidden files.
 
 
 # packages
-antigen bundle pip
-antigen bundle command-not-found
 antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions 
+antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle MichaelAquilina/zsh-you-should-use
 antigen bundle ael-code/zsh-colored-man-pages
 # applying
 antigen apply
+
+# History in cache directory:
+HISTSIZE=10000000
+SAVEHIST=10000000
+HISTFILE=~/.cache/.zsh_history
 
 # vi mode
 bindkey -v
@@ -32,6 +46,13 @@ zle-line-init() {
 zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+
+# Use vim keys in tab complete menu:
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -v '^?' backward-delete-char
 
 ### SpaceShip settings ###
 
@@ -74,26 +95,22 @@ prompt spaceship
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
 
-# aws completion
-autoload bashcompinit && bashcompinit
-autoload -Uz compinit && compinit
-compinit
-
-complete -C '/usr/bin/aws_completer' aws
+#source /home/avatar/.zsh/aws.plugin.zsh
 
 ### Personal list of alias ###
 
 # better command alternative
 alias cat='bat'
-alias ls='exa --icons'
+alias ls='exa --icons --group-directories-first'
+alias tree='tree -C'
+alias diff='diff --color'
 
 alias gitd='/usr/bin/git --git-dir=$HOME/.cfg/.git/ --work-tree=$HOME'
 
 # faster
-alias l='exa -ah'
+alias l='ls -ah'
 alias v='nvim'
 alias c='clear'
-alias tree='tree -C'
 
 # sudo command
 alias pacman='sudo pacman'
@@ -107,5 +124,10 @@ alias t='tree -d -L 4'
 alias todo='cat ~/.local/share/calcurse/apts'
 alias die='systemctl hibernate && i3lock'
 alias rest='systemctl suspend && i3lock'
-alias record='ffmpeg -f x11grab -i :0.0 -f alsa -ac 2 -i default'
-alias w='curl wttr.in/'
+alias tc='tar zcvf'
+alias tx='tar zxvf'
+
+autoload bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
+compinit
+complete -C '/usr/bin/aws_completer' aws
