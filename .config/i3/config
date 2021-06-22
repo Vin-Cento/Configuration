@@ -164,7 +164,7 @@ bindsym $mod+g exec google-chrome-stable
 bindsym $mod+b exec brave
 
 # programs
-bindsym $mod+Shift+d exec emacs
+bindsym $mod+o exec libreoffice
 bindsym $mod+Shift+z exec zathura
 bindsym $mod+Shift+s exec slack
 
