@@ -44,6 +44,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'nanotech/jellybeans.vim'
+Plug 'tomasiser/vim-code-dark'
 
 " fzf & vim-rooter
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }

@@ -165,6 +165,7 @@ bindsym $mod+b exec brave
 
 # programs
 bindsym $mod+o exec libreoffice
+bindsym $mod+t exec tableplus
 bindsym $mod+Shift+z exec zathura
 bindsym $mod+Shift+s exec slack
 
