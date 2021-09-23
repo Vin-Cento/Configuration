@@ -1,0 +1,6 @@
+{
+  "jedi.enable": false,
+  "pyright.enable": true,
+  "rust-analyzer.updates.askBeforeDownload": false,
+  "rust-analyzer.server.path": "/bin/rust-analyzer",
+}
