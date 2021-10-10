@@ -34,15 +34,14 @@ if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autolo
 	autocmd VimEnter * PlugInstall
 endif
 
-if (has("termguicolors"))
-    set termguicolors
-endif
 
 call plug#begin('~/.config/nvim/pluggin')
 
-	Plug 'kyoz/purify', {'rtp': 'vim'}
+	" Plug 'kyoz/purify', {'rtp': 'vim'}
+	Plug 'ghifarit53/tokyonight-vim'
 
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
+	Plug 'dense-analysis/ale'
 
 	Plug 'rust-lang/rust.vim'
 	
@@ -70,10 +69,10 @@ call plug#end()
 let g:mapleader=' '
 nnoremap <silent> <leader>      :<c-u>WhichKey ' '<CR>
 
-nmap <leader>p :bp<CR>
-nmap <leader>n :bn<CR>
+nmap <leader>p :bn<CR>
+nmap <leader>n :bp<CR>
 nmap <leader>w :w<CR>
-nmap <leader>rf :FZF<CR>
+nmap <leader>ff :FZF<CR>
 nmap <leader>rg :Rg<CR>
 nmap <leader>rb :Buffers<CR>
 nmap <leader>rh :History<CR>
@@ -84,13 +83,20 @@ vmap <C-c> "+y<CR>
 
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
-let g:airline_theme='purify'
+if (has("termguicolors"))
+    set termguicolors
+endif
+
+let g:airline_theme='tokyonight'
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#fnamemode=':t'
+let g:tokyonight_transparent_background=1
+let g:tokyonight_enable_italic=1
 
 lua require 'colorizer'.setup()
-set background=dark
-colorscheme purify
+let g:tokyonight_style = 'night'
+colorscheme tokyonight
+
 
 hi CursorLine guifg=NONE guibg=#2d3c45 ctermbg=237 gui=NONE cterm=NONE
 
@@ -105,6 +111,8 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+au FileType python setlocal formatprg=autopep8\ -
+
 map <leader>t :NERDTreeToggle<CR>
 
 " Use K to show documentation in preview window.
@@ -117,10 +125,17 @@ autocmd FileType sh imap <buffer> <F10> <esc>:w<CR>:exec '!bash' shellescape(@%,
 autocmd FileType python map <buffer> <F10> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <F10> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 
-autocmd FileType python map <buffer> <F11> :w<CR>:exec '!pycodestyle --first' shellescape(@%, 1)<CR>
-
 autocmd FileType tex map <buffer> <F10> :w<CR>:exec '!pdflatex' shellescape(@%, 1)<CR>
 autocmd FileType tex imap <buffer> <F10> <esc>:w<CR>:exec '!pdflatex' shellescape(@%, 1)<CR>
 
 autocmd FileType rust map <buffer> <F10> :w <CR>:exec '!cargo run' shellescape(@%, 1)<CR>
 autocmd FileType rust imap <buffer> <F10> <esc>:w <CR>:exec '!cargo run' shellescape(@%, 1)<CR>
+
+" Put these lines at the very end of your vimrc file.
+
+" Load all plugins now.
+" Plugins need to be added to runtimepath before helptags can be generated.
+packloadall
+" Load all of the helptags now, after plugins have been loaded.
+" All messages and errors will be ignored.
+silent! helptags ALL

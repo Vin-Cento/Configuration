@@ -5,8 +5,8 @@
 #
 # If you really want the terminal's default colors, and if lynx is built using
 # ncurses' default-color support, remove these two lines:
-# normal:		normal:			lightgray:black
-# default:	normal:			white:black
+#normal:		normal:			black:black
+#default:	normal:			white:black
 
 # Normal type styles correspond to HTML tags.
 #
@@ -69,20 +69,20 @@ forwbackw.arrow:reverse
 hot.paste:	normal:			brightred:	gray
 
 # Styles with classes - <ul class=red> etc.
-ul.red:		    underline:		brightred
-ul.blue:	    bold:			brightblue
-li.red:		    reverse:		red:		yellow
-li.blue:	    bold:			blue
-strong.a:	    bold:			black:		red
-em.a:		    reverse:		black:		blue
-strong.b:	    bold:			white:		red
-em.b:		    reverse:		white:		blue
+ul.red:		underline:		brightred
+ul.blue:	bold:			brightblue
+li.red:		reverse:		red:		yellow
+li.blue:	bold:			blue
+strong.a:	bold:			black:		red
+em.a:		reverse:		black:		blue
+strong.b:	bold:			white:		red
+em.b:		reverse:		white:		blue
 strong.debug:	reverse:		green
 font.letter:	normal:			white:		blue
 input.submit:	normal:			cyan
-tr.baone:	    bold:			yellow
-tr.batwo:	    bold:			green
-tr.bathree:	    bold:			red
+tr.baone:	bold:			yellow
+tr.batwo:	bold:			green
+tr.bathree:	bold:			red
 #
 # Special handling for link.
 link:		normal:			white
@@ -114,4 +114,3 @@ span.htmlsrc_badseq:normal:		red
 span.htmlsrc_badtag:normal:		red
 span.htmlsrc_badattr:normal:		red
 span.htmlsrc_sgmlspecial:normal:	yellow
-

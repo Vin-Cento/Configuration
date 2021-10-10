@@ -10,7 +10,7 @@ XF86AudioMute
 super + Return
 	$TERMINAL
 super + @space
-	rofi -show drun -theme Monokai
+	rofi -show drun
 super + z
 	zathura
 super + b
@@ -38,6 +38,8 @@ super + Escape
 	polybar -r example&
 Print
  	flameshot gui -p ~/Downloads/ScreenShots
+super + Print
+	sxiv ~/Downloads/ScreenShots
 
 #
 # bspwm hotkeys

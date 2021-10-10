@@ -108,7 +108,6 @@ source /usr/share/fzf/key-bindings.zsh
 
 # better command alternative
 alias b='bat'
-alias ls='exa --icons --group-directories-first'
 alias tree='tree --dirsfirst -C'
 alias diff='diff --color'
 alias grep='grep --color'
@@ -118,9 +117,13 @@ alias gitd='/usr/bin/git --git-dir=$HOME/.cfg/.git/ --work-tree=$HOME'
 alias docker='sudo docker'
 
 # faster
-alias l='ls -alh'
+alias l='exa --icons --group-directories-first -h'
+alias la='exa --icons --group-directories-first -ah'
+alias ll='exa --icons --group-directories-first -lah'
 alias v='nvim'
 alias c='clear'
+alias cl='clear && l'
+alias ca='clear && la'
 
 # changing default
 alias t='tree -d -L 4'
@@ -161,5 +164,3 @@ duck () {
     lynx "https://duckduckgo.com/lite?q=$url"
 }
 alias "d"=duck
-
-# cowsay -f dragon `shuf -n 1 ~/.config/Quotes/quotes.txt`
