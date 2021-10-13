@@ -63,6 +63,8 @@ call plug#begin('~/.config/nvim/pluggin')
 
 	Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 
+	Plug 'junegunn/goyo.vim'
+
 
 call plug#end()
 
@@ -78,6 +80,12 @@ nmap <leader>rb :Buffers<CR>
 nmap <leader>rh :History<CR>
 nmap <leader>bd :bdelete!<CR>
 nmap <leader>q :q!<CR>
+
+" window moving
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 vmap <C-c> "+y<CR>
 
@@ -97,6 +105,11 @@ lua require 'colorizer'.setup()
 let g:tokyonight_style = 'night'
 colorscheme tokyonight
 
+" map <leader><leader> :Goyo \| set linebreak<CR>
+ map <leader><leader> :Goyo<CR>
+
+let g:ale_enabled = 0
+nmap <leader>a :ALEToggle<CR>
 
 hi CursorLine guifg=NONE guibg=#2d3c45 ctermbg=237 gui=NONE cterm=NONE
 

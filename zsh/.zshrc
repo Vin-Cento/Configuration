@@ -1,14 +1,4 @@
-# export PATH=$PATH:$HOME/.config/cargo/bin:$HOME/.local/share/scripts
-# export LYNX_CFG=~/.config/lynx/lynx.cfg
-# export LYNX_LSS=~/.config/lynx/lynx.lss
-
-# # avoid duplicates..
-# export HISTCONTROL=ignoredups:erasedups
-# # append history entries..
-# shopt -s histappend
-# # After each command, save and reload history
-# export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-
+# making it prettier
 if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
 set t_Co=256
 
@@ -16,14 +6,19 @@ set t_Co=256
 HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE=~/.cache/.zsh_history
+# tmux and zsh history sync
+export HISTCONTROL=ignoredups:erasedups  # avoid duplicates..
+setopt histappend  # After each command, save and reload history
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
 
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 _comp_options+=(globdots)		# Include hidden files.
-
 # Basic auto/tab complete:
 autoload -Uz compinit && compinit
 autoload -Uz bashcompinit && bashcompinit
+
 
 # cd with just Filename
 setopt autocd
@@ -124,6 +119,7 @@ alias v='nvim'
 alias c='clear'
 alias cl='clear && l'
 alias ca='clear && la'
+alias f='lf'
 
 # changing default
 alias t='tree -d -L 4'

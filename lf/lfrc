@@ -128,5 +128,7 @@ map gd cd ~/Downloads
 map gp cd ~/Project
 map gw cd ~/Work
 
-map gT cd ~/Templates
-map gM cd ~/Music
+map gt cd ~/Templates
+map gm cd ~/Music
+map gv cd ~/Videos
+map gh cd ~/

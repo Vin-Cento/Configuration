@@ -25,7 +25,7 @@ super + v
 	virt-manager
 super + shift + s
 	slack
-super + f
+super + r
 	alacritty -e lf
 super + c
 	alacritty -e calcurse
@@ -70,7 +70,7 @@ super + shift + g
 #
 
 # set the window state
-super + {t,shift + t,s,shift + f}
+super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
