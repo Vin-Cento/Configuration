@@ -220,7 +220,9 @@
 
 # A list of dotted module names of IPython extensions to load.
 #  See also: InteractiveShellApp.extensions
-# c.TerminalIPythonApp.extensions = []
+c.TerminalIPythonApp.extensions = [
+    'ipython_clipboard'
+]
 
 # Path to an extra config file to load.
 #  See also: BaseIPythonApplication.extra_config_file

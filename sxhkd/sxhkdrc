@@ -1,6 +1,6 @@
 # audio
 XF86AudioRaiseVolume
-	pactl set-sink-volume @DEFAULT_SINK@ +1%
+	pactl set-sink-volume @DEFAULT_SINK@ +4%
 XF86AudioLowerVolume
 	pactl set-sink-volume @DEFAULT_SINK@ -5%
 XF86AudioMute
@@ -11,8 +11,6 @@ super + Return
 	$TERMINAL
 super + @space
 	rofi -show drun
-super + z
-	zathura
 super + b
 	brave
 super + shift + b
@@ -25,10 +23,8 @@ super + v
 	virt-manager
 super + shift + s
 	slack
-super + r
+super + w
 	alacritty -e lf
-super + c
-	alacritty -e calcurse
 super + p
 	passmenu
 # make sxhkd reload its configuration files:
@@ -70,7 +66,7 @@ super + shift + g
 #
 
 # set the window state
-super + {t,shift + t,s,f}
+super + {n,shift + n,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags

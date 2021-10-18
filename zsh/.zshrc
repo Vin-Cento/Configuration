@@ -78,7 +78,7 @@ SPACESHIP_PHP_SHOW=false
 SPACESHIP_RUST_SHOW=false
 SPACESHIP_JULIA_SHOW=false
 SPACESHIP_DOCKER_SHOW=false
-SPACESHIP_DOCKER_CONTEXT_SHOW=false
+SPACESHIP_DOCKER_CONTEXT_SHOW=true
 SPACESHIP_AWS_SHOW=false
 SPACESHIP_CONDA_SHOW=false
 SPACESHIP_VENV_SHOW=true
@@ -110,6 +110,7 @@ alias grep='grep --color'
 alias gitd='/usr/bin/git --git-dir=$HOME/.cfg/.git/ --work-tree=$HOME'
 
 alias docker='sudo docker'
+alias kill='sudo kill'
 
 # faster
 alias l='exa --icons --group-directories-first -h'
@@ -120,8 +121,6 @@ alias c='clear'
 alias cl='clear && l'
 alias ca='clear && la'
 alias f='lf'
-
-# changing default
 alias t='tree -d -L 4'
 
 # custom
@@ -159,4 +158,5 @@ duck () {
     declare url=$(urlencode "$*")
     lynx "https://duckduckgo.com/lite?q=$url"
 }
+
 alias "d"=duck

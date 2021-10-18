@@ -65,6 +65,7 @@ call plug#begin('~/.config/nvim/pluggin')
 
 	Plug 'junegunn/goyo.vim'
 
+	Plug 'jupyter-vim/jupyter-vim'
 
 call plug#end()
 
