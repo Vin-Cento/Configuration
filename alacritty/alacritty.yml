@@ -1,17 +1,18 @@
 font:
+
     normal:
-        family: Hack Nerd Font
+        family: Mononoki Nerd Font
         style: Regular
         
     bold:
-        family: Hack Nerd Font
+        family: Mononoki Nerd Font
         style: Bold
 
     italic:
-        family: Hack Nerd Font
+        family: Mononoki Nerd Font
         style: Italic
         
-    size: 8.0
+    size: 8
 
 draw_bold_text_with_bright_colors: true
 
@@ -109,7 +110,7 @@ colors: *tokyo-night-storm
 # draw_bold_text_with_bright_colors: false
 
 
-background_opacity: 0.9
+background_opacity: 0.89
 
 selection:
     save_to_clipboard: true

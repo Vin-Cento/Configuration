@@ -18,9 +18,3 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
 bspc rule -a Screenkey manage=off
-
-# pgrep bspswallow || bspswallow &
-
-# bspc config focused_locked_border_color '#49a4f8'
-# bspc config focused_sticky_border_color '#49a4f8'
-# bspc config focused_private_border_color '#49a4f8'

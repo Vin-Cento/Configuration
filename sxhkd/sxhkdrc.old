@@ -24,8 +24,6 @@ super + v
 super + shift + s
 	slack
 super + w
-	networkmanager_dmenu
-super + shift + f
 	alacritty -e lf
 super + p
 	passmenu

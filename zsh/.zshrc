@@ -63,7 +63,7 @@ bindkey -v '^?' backward-delete-char
 SPACESHIP_TIME_SHOW=true
 SPACESHIP_PROMPT_ADD_NEWLINE=true
 SPACESHIP_PROMPT_SEPARATE_LINE=true
-SPACESHIP_CHAR_SYMBOL=❯
+SPACESHIP_CHAR_SYMBOL=$
 SPACESHIP_CHAR_SUFFIX=" "
 SPACESHIP_HG_SHOW=false
 SPACESHIP_PACKAGE_SHOW=false
@@ -114,8 +114,8 @@ alias kill='sudo kill'
 
 # faster
 alias l='exa --icons --group-directories-first -h'
+alias ll='exa --icons --group-directories-first -lh'
 alias la='exa --icons --group-directories-first -ah'
-alias ll='exa --icons --group-directories-first -lah'
 alias v='nvim'
 alias c='clear'
 alias cl='clear && l'
@@ -132,7 +132,6 @@ alias vv='nvim ~/.config/nvim/init.vim'
 alias vz='nvim ~/.config/zsh/.zshrc'
 alias vk='nvim ~/.config/sxhkd/sxhkdrc'
 alias vs='nvim -o $(find ~/.local/share/scripts -type f | fzf)'
-alias vb='nvim ~/.config/bspwm/bspwmrc'
 alias va='nvim ~/.config/alacritty/alacritty.yml'
 alias vx='nvim ~/.xinitrc'
 alias gl='git log --all --decorate --graph'

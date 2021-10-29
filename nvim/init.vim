@@ -37,7 +37,6 @@ endif
 
 call plug#begin('~/.config/nvim/pluggin')
 
-	" Plug 'kyoz/purify', {'rtp': 'vim'}
 	Plug 'ghifarit53/tokyonight-vim'
 
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -58,23 +57,48 @@ call plug#begin('~/.config/nvim/pluggin')
 	Plug 'norcalli/nvim-colorizer.lua'
 	Plug 'sheerun/vim-polyglot'
 
-	Plug 'vim-airline/vim-airline'
-	Plug 'vim-airline/vim-airline-themes' 
+	Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes' 
 
 	Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 
 	Plug 'junegunn/goyo.vim'
 
-	Plug 'jupyter-vim/jupyter-vim'
+	Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 call plug#end()
 
-let g:mapleader=' '
+" Track the engine.
+
+" Snippets are separated from the engine. Add this if you want them:
+
+" Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
+" - https://github.com/Valloric/YouCompleteMe
+" - https://github.com/nvim-lua/completion-nvim
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+let g:mapleader='f'
+
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+noremap j <NOP>
+noremap k <NOP>
+noremap h <NOP>
+noremap l <NOP>
+noremap f <NOP>
+
 nnoremap <silent> <leader>      :<c-u>WhichKey ' '<CR>
 
 nmap <leader>p :bn<CR>
 nmap <leader>n :bp<CR>
 nmap <leader>w :w<CR>
+nmap <leader>s :Snippets<CR>
 nmap <leader>ff :FZF<CR>
 nmap <leader>rg :Rg<CR>
 nmap <leader>rb :Buffers<CR>
@@ -112,7 +136,9 @@ colorscheme tokyonight
 let g:ale_enabled = 0
 nmap <leader>a :ALEToggle<CR>
 
-hi CursorLine guifg=NONE guibg=#2d3c45 ctermbg=237 gui=NONE cterm=NONE
+" hi CursorLine guifg=NONE guibg=#2d3c45 ctermbg=237 gui=NONE cterm=NONE
+hi CursorLine guifg=NONE guibg=#666d70 ctermbg=237 gui=bold cterm=NONE
+" hi CursorLine guifg=NONE guibg=#add8e6 gui=NONE cterm=NONE
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
@@ -144,6 +170,7 @@ autocmd FileType tex imap <buffer> <F10> <esc>:w<CR>:exec '!pdflatex' shellescap
 
 autocmd FileType rust map <buffer> <F10> :w <CR>:exec '!cargo run' shellescape(@%, 1)<CR>
 autocmd FileType rust imap <buffer> <F10> <esc>:w <CR>:exec '!cargo run' shellescape(@%, 1)<CR>
+
 
 " Put these lines at the very end of your vimrc file.
 
