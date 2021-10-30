@@ -1,5 +1,5 @@
 set nocompatible
-set scrolloff=15
+set scrolloff=5
 set nohlsearch
 set noerrorbells 
 set cursorline 
@@ -81,24 +81,23 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-let g:mapleader='f'
+let g:mapleader=' '
 
 noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
-noremap j <NOP>
-noremap k <NOP>
+noremap j }
+noremap k {
 noremap h <NOP>
 noremap l <NOP>
-noremap f <NOP>
 
 nnoremap <silent> <leader>      :<c-u>WhichKey ' '<CR>
 
 nmap <leader>p :bn<CR>
 nmap <leader>n :bp<CR>
 nmap <leader>w :w<CR>
-nmap <leader>s :Snippets<CR>
+nmap <leader>S :Snippets<CR>
 nmap <leader>ff :FZF<CR>
 nmap <leader>rg :Rg<CR>
 nmap <leader>rb :Buffers<CR>
