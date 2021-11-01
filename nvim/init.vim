@@ -1,5 +1,5 @@
 set nocompatible
-set scrolloff=5
+set scrolloff=10
 set nohlsearch
 set noerrorbells 
 set cursorline 
@@ -25,6 +25,7 @@ syntax on
 
 filetype plugin indent on
 set smartindent
+set ignorecase
 
 " installing vimplug
 if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim"'))
@@ -67,6 +68,32 @@ call plug#begin('~/.config/nvim/pluggin')
 
 call plug#end()
 
+let g:sneak#label = 1
+
+" case insensitive sneak
+let g:sneak#use_ic_scs = 1
+
+" immediately move to the next instance of search, if you move the cursor sneak is back to default behavior
+let g:sneak#s_next = 1
+
+" remap so I can use , and ; with f and t
+map gS <Plug>Sneak_,
+map gs <Plug>Sneak_;
+
+" Change the colors
+highlight Sneak guifg=black guibg=#00C7DF ctermfg=black ctermbg=cyan
+highlight SneakScope guifg=red guibg=yellow ctermfg=red ctermbg=yellow
+
+" Cool prompts
+let g:sneak#prompt = '🕵'
+let g:sneak#prompt = ' '
+
+" I like quickscope better for this since it keeps me in the scope of a single line
+" map f <Plug>Sneak_f
+" map F <Plug>Sneak_F
+" map t <Plug>Sneak_t
+" map T <Plug>Sneak_T
+"
 " Track the engine.
 
 " Snippets are separated from the engine. Add this if you want them:
@@ -75,9 +102,9 @@ call plug#end()
 " - https://github.com/Valloric/YouCompleteMe
 " - https://github.com/nvim-lua/completion-nvim
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
+"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
@@ -135,9 +162,7 @@ colorscheme tokyonight
 let g:ale_enabled = 0
 nmap <leader>a :ALEToggle<CR>
 
-" hi CursorLine guifg=NONE guibg=#2d3c45 ctermbg=237 gui=NONE cterm=NONE
 hi CursorLine guifg=NONE guibg=#666d70 ctermbg=237 gui=bold cterm=NONE
-" hi CursorLine guifg=NONE guibg=#add8e6 gui=NONE cterm=NONE
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
