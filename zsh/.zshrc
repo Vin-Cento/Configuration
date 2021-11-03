@@ -6,10 +6,15 @@ set t_Co=256
 HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE=~/.cache/.zsh_history
+
+# export HISTTIMEFORMAT="[%F %T] "
+# setopt EXTENDED_HISTORY
 # tmux and zsh history sync
-export HISTCONTROL=ignoredups:erasedups  # avoid duplicates..
-setopt histappend  # After each command, save and reload history
-export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+# export HISTCONTROL=ignoredups:erasedups  # avoid duplicates..
+# export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+setopt INC_APPEND_HISTORY  # After each command, save and reload history
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
 
 
 zstyle ':completion:*' menu select
@@ -111,6 +116,7 @@ alias grep='grep --color'
 
 alias gitd='/usr/bin/git --git-dir=$HOME/.cfg/.git/ --work-tree=$HOME'
 
+alias pacman='sudo pacman'
 alias docker='sudo docker'
 alias kill='sudo kill'
 

@@ -5,6 +5,10 @@ XF86AudioLowerVolume
 	pactl set-sink-volume @DEFAULT_SINK@ -5%
 XF86AudioMute
     pactl set-sink-mute 0 toggle
+XF86MonBrightnessUp
+	xbacklight -inc 10
+XF86MonBrightnessDown
+	xbacklight -dec 10
 
 # program launcher
 super + s
