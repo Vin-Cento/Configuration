@@ -7,14 +7,16 @@ HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE=~/.cache/.zsh_history
 
-# export HISTTIMEFORMAT="[%F %T] "
-# setopt EXTENDED_HISTORY
 # tmux and zsh history sync
-# export HISTCONTROL=ignoredups:erasedups  # avoid duplicates..
-# export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-setopt INC_APPEND_HISTORY  # After each command, save and reload history
-setopt HIST_FIND_NO_DUPS
+setopt CORRECT
+setopt SHARE_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_IGNORE_SPACE
+setopt EXTENDED_HISTORY
 
 
 zstyle ':completion:*' menu select
@@ -23,7 +25,7 @@ _comp_options+=(globdots)		# Include hidden files.
 # Basic auto/tab complete:
 autoload -Uz compinit && compinit
 autoload -Uz bashcompinit && bashcompinit
-
+complete -C '/usr/bin/aws_completer' aws
 
 # cd with just Filename
 setopt autocd
@@ -117,6 +119,7 @@ alias grep='grep --color'
 alias gitd='/usr/bin/git --git-dir=$HOME/.cfg/.git/ --work-tree=$HOME'
 
 alias pacman='sudo pacman'
+alias openvpn='sudo openvpn'
 alias docker='sudo docker'
 alias kill='sudo kill'
 
@@ -139,9 +142,8 @@ alias tx='tar zxvf'
 alias vv='nvim ~/.config/nvim/init.vim'
 alias vz='nvim ~/.config/zsh/.zshrc'
 alias vk='nvim ~/.config/sxhkd/sxhkdrc'
-alias vs='nvim -o $(find ~/.local/share/scripts -type f | fzf)'
+alias vs='nvim -o $(find /home/vinny/.config/nvim/pluggin/vim-snippets/snippets -type f | fzf)'
 alias va='nvim ~/.config/alacritty/alacritty.yml'
-alias vx='nvim ~/.xinitrc'
 alias gl='git log --all --decorate --graph'
 
 # searches
