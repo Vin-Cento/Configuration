@@ -92,3 +92,12 @@ user-dirs.dirs
 user-dirs.locale
 xfce4
 zoomus.conf
+.stellarium
+bin
+dmenu-flexipatch
+koifarm
+lib
+npm
+tabbed
+unity3d
+vivid

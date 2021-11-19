@@ -1,3 +1,6 @@
+set ratios 1:1:4
+set cleaner ~/.config/lf/cleaner
+set previewer ~/.config/lf/preview
 # interpreter for shell commands
 # set '-eu' options for shell commands
 # These options are used to have safer shell commands. Option '-e' is used to
@@ -104,6 +107,8 @@ cmd zip ${{
     rm -rf $1
 }}
 
+map I set hidden!
+
 map t toggle
 map T trash
 map D delete
@@ -126,7 +131,7 @@ map gE cd /etc
 map gc cd ~/.config
 map gd cd ~/Downloads
 map gp cd ~/Project
-map gw cd ~/Work
+map gj cd ~/Job
 
 map gt cd ~/Templates
 map gm cd ~/Music

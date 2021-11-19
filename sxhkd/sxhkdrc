@@ -1,14 +1,14 @@
 # audio
 XF86AudioRaiseVolume
-	pactl set-sink-volume @DEFAULT_SINK@ +4%
+	pactl set-sink-volume @DEFAULT_SINK@ +5%
 XF86AudioLowerVolume
 	pactl set-sink-volume @DEFAULT_SINK@ -5%
 XF86AudioMute
-    pactl set-sink-mute 0 toggle
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
 XF86MonBrightnessUp
-	xbacklight -inc 10
+	brightnessctl s 10%+
 XF86MonBrightnessDown
-	xbacklight -dec 10
+	brightnessctl s 10%-
 
 # program launcher
 super + s
@@ -16,7 +16,7 @@ super + s
 super + Return
 	$TERMINAL
 super + @space
-	rofi -show drun
+	dmenu_run -fn 'Mononoki Mono-12'
 super + b
 	brave
 super + shift + b
@@ -30,11 +30,11 @@ super + v
 super + shift + s
 	slack
 super + w
-	networkmanager_dmenu
+	networkmanager_dmenu -fn 'Mononoki Mono-12'
 super + shift + f
-	alacritty -e lf
+	alacritty -e lfrun
 super + p
-	passmenu
+	passmenu -fn 'Mononoki Mono-12'
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
@@ -64,6 +64,22 @@ super + y
 # swap the current node and the biggest window
 super + shift + g
 	bspc node -s biggest.window
+
+# add to tabbed container
+ctrl + alt + {Left,Down,Up,Right}
+    tabc attach $(bspc query -N -n) {$(bspc query -N -n west),$(bspc query -N -n south),$(bspc query -N -n north),$(bspc query -N -n east)}
+
+# create/remove from tabbed container
+super + z 
+    id=$(bspc query -N -n); \
+    [[ "$(tabc printclass $id)" == "tabbed" ]] \
+    && tabc detach $id \
+    || tabc create $id 
+
+# toggle autoattach in tabbed container
+super + shift + z 
+    tabc autoattach $(bspc query -N -n) 
+
 
 #
 # state/flags

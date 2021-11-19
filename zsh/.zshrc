@@ -1,3 +1,5 @@
+export LS_COLORS="$(vivid generate ~/.config/vivid/tokyo.yml)"
+
 # making it prettier
 if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
 set t_Co=256
@@ -124,9 +126,9 @@ alias docker='sudo docker'
 alias kill='sudo kill'
 
 # faster
-alias l='exa --icons --group-directories-first -h'
-alias ll='exa --icons --group-directories-first -lh'
-alias la='exa --icons --group-directories-first -ah'
+alias l='exa --icons -lh --group-directories-first'
+alias ll='exa --icons -lh --grid --group-directories-first'
+alias la='exa --icons --group-directories-first -lah --grid'
 alias v='nvim'
 alias c='clear'
 alias cl='clear && l'

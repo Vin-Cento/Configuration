@@ -12,7 +12,7 @@ font:
         family: Mononoki Nerd Font
         style: Italic
         
-    size: 7
+    size: 6
 
 draw_bold_text_with_bright_colors: true
 
@@ -106,11 +106,14 @@ schemes:
       cyan:    '#0db9d7'
       white:   '#acb0d0'
 
+    cursor:
+      cursor: '#0db9b7'
+
 colors: *tokyo-night-storm
 # draw_bold_text_with_bright_colors: false
 
 
-background_opacity: 0.89
+background_opacity: 0.85
 
 selection:
     save_to_clipboard: true

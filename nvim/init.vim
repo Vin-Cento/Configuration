@@ -1,4 +1,13 @@
-set nocompatible
+" installing vimplug
+if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim"'))
+	echo "Downloading junegunn/vim-plug to manage plugins..."
+	silent !mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/
+	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim
+	autocmd VimEnter * PlugInstall
+endif
+
+
+" set nocompatible
 set scrolloff=10
 set nohlsearch
 set noerrorbells 
@@ -26,14 +35,6 @@ syntax on
 filetype plugin indent on
 set smartindent
 set ignorecase
-
-" installing vimplug
-if ! filereadable(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim"'))
-	echo "Downloading junegunn/vim-plug to manage plugins..."
-	silent !mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/
-	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > ${XDG_CONFIG_HOME:-$HOME/.config}/nvim/autoload/plug.vim
-	autocmd VimEnter * PlugInstall
-endif
 
 
 call plug#begin('~/.config/nvim/pluggin')
@@ -104,6 +105,7 @@ let g:sneak#prompt = ' '
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
+let g:UltiSnipsSnippetsDir="~/.config/nvim/pluggin/ultisnips"
 "
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
@@ -131,6 +133,7 @@ nmap <leader>rb :Buffers<CR>
 nmap <leader>rh :History<CR>
 nmap <leader>bd :bdelete!<CR>
 nmap <leader>q :q!<CR>
+nmap <leader>sudo :w !sudo tee % <CR><CR>
 
 " window moving
 map <C-h> <C-w>h
