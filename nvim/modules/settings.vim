@@ -1,3 +1,12 @@
+if has('vim_starting')
+  set encoding=utf-8
+endif
+scriptencoding utf-8
+
+if &compatible
+  set nocompatible
+endif
+
 set scrolloff=10
 set nohlsearch
 set noerrorbells 
@@ -23,3 +32,5 @@ set autoread
 
 set smartindent
 set ignorecase
+
+set completeopt=menu,menuone,noselect

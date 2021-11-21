@@ -3,6 +3,7 @@ syntax on
 
 let g:mapleader=' '
 let g:ale_enabled = 0
+let g:coc_start_at_startup = v:false
 
 source $HOME/.config/nvim/modules/plugs_call.vim
 source $HOME/.config/nvim/modules/settings.vim
@@ -11,7 +12,8 @@ source $HOME/.config/nvim/modules/remaps.vim
 source $HOME/.config/nvim/modules/ultisnips.vim
 source $HOME/.config/nvim/modules/look.vim
 
-
+lua require('language_servers')
+lua require('cmp_completion')
 
 au FileType python setlocal formatprg=autopep8\ -
 

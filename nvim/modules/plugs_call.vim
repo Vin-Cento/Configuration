@@ -8,6 +8,23 @@ endif
 
 call plug#begin('~/.config/nvim/pluggin')
 
+    Plug 'neovim/nvim-lspconfig'
+
+    Plug 'onsails/lspkind-nvim'
+    Plug 'hrsh7th/nvim-cmp'
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'hrsh7th/cmp-buffer'
+    Plug 'hrsh7th/cmp-path'
+    Plug 'hrsh7th/cmp-cmdline'
+
+    " For vsnip users.
+    " Plug 'hrsh7th/cmp-vsnip'
+    " Plug 'hrsh7th/vim-vsnip'
+
+    " For ultisnips users.
+    Plug 'SirVer/ultisnips'
+    Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+
 	Plug 'ghifarit53/tokyonight-vim'
 
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
