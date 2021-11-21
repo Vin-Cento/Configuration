@@ -16,6 +16,7 @@ call plug#begin('~/.config/nvim/pluggin')
     Plug 'hrsh7th/cmp-buffer'
     Plug 'hrsh7th/cmp-path'
     Plug 'hrsh7th/cmp-cmdline'
+    Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 
     " For vsnip users.
     " Plug 'hrsh7th/cmp-vsnip'

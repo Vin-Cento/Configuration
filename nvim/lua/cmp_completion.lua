@@ -74,14 +74,22 @@ cmp.setup({
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
     },
     sources = cmp.config.sources({
+        { name = 'cmp_tabnine' },
+        { name = 'ultisnips' }, -- For ultisnips users.
         { name = 'buffer' },
         { name = 'path' },
-        { name = 'ultisnips' }, -- For ultisnips users.
         { name = 'nvim_lsp' },
         -- { name = 'snippy' }, -- For snippy users.
         -- { name = 'vsnip' }, -- For vsnip users.
         -- { name = 'luasnip' }, -- For luasnip users.
-    })
+    }),
+    experimental = {
+        -- I like the new menu better! Nice work hrsh7th
+        native_menu = false,
+
+        -- Let's play with this for a day or two
+        ghost_text = true,
+    },
 })
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
@@ -105,3 +113,13 @@ cmp.setup {
     format = lspkind.cmp_format(),
   },
 }
+
+local tabnine = require('cmp_tabnine.config')
+tabnine:setup({
+        max_lines = 1000;
+        max_num_results = 20;
+        sort = true;
+	run_on_every_keystroke = true;
+	snippet_placeholder = '..';
+})
+
