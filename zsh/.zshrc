@@ -1,5 +1,3 @@
-export LS_COLORS="$(vivid generate ~/.config/vivid/tokyo.yml)"
-
 # making it prettier
 if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
 set t_Co=256
@@ -135,13 +133,15 @@ alias cl='clear && l'
 alias ca='clear && la'
 alias f='lf'
 alias t='tree -d -L 4'
+alias p='ipython'
 
 # custom
 alias tc='tar zcvf'
 alias tx='tar zxvf'
 
 # quick config
-alias vv='nvim ~/.config/nvim/init.vim'
+alias vv='nvim $(rg --hidden -l "" ~/.config/nvim | fzf)'
+alias vw='nvim ~/Documents/.vimwiki/index.md'
 alias vz='nvim ~/.config/zsh/.zshrc'
 alias vk='nvim ~/.config/sxhkd/sxhkdrc'
 alias vs='nvim -o $(find /home/vinny/.config/nvim/pluggin/vim-snippets/snippets -type f | fzf)'

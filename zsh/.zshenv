@@ -1,10 +1,12 @@
 export PATH=$PATH:$HOME/.config/cargo/bin:$HOME/.local/share/scripts:$HOME/.local/bin
+export LS_COLORS="$(vivid generate ~/.config/vivid/tokyo.yml)"
+export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
+
 
 export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 export TERMINAL="alacritty"
 export EDITOR="nvim"
-
 
 # Other XDG paths
 export XDG_DATA_HOME=~/.local/share
@@ -24,6 +26,7 @@ export ADB_VENDOR_KEY="$XDG_CONFIG_HOME"/android
 export LESSHISTFILE=-
 
 export CARGO_HOME=$XDG_DATA_HOME/cargo
+export RUSTUP_HOME=$XDG_DATA_HOME/rustup
 export GOPATH=$XDG_DATA_HOME/go
 
 # Fixing Paths
