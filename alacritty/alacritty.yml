@@ -52,36 +52,8 @@ schemes:
   tokyo-night: &tokyo-night
     # Default colors
     primary:
+      # background: '#1a1b26'
       background: '#1a1b26'
-      foreground: '#a9b1d6'
-
-    # Normal colors
-    normal:
-      black:   '#32344a'
-      red:     '#f7768e'
-      green:   '#9ece6a'
-      yellow:  '#e0af68'
-      blue:    '#7aa2f7'
-      magenta: '#ad8ee6'
-      cyan:    '#449dab'
-      white:   '#787c99'
-
-    # Bright colors
-    bright:
-      black:   '#444b6a'
-      red:     '#ff7a93'
-      green:   '#b9f27c'
-      yellow:  '#ff9e64'
-      blue:    '#7da6ff'
-      magenta: '#bb9af7'
-      cyan:    '#0db9d7'
-      white:   '#acb0d0'
-
-
-  tokyo-night-storm: &tokyo-night-storm
-    # Default colors
-    primary:
-      background: '#11121d'
       foreground: '#a9b1d6'
 
     # Normal colors
@@ -109,11 +81,15 @@ schemes:
     cursor:
       cursor: '#0db9b7'
 
-colors: *tokyo-night-storm
-# draw_bold_text_with_bright_colors: false
+colors: *tokyo-night
+draw_bold_text_with_bright_colors: false
 
 
-background_opacity: 0.85
+background_opacity: 1
 
 selection:
     save_to_clipboard: true
+
+scrolling:
+    history: 10000
+    auto_scroll: true
