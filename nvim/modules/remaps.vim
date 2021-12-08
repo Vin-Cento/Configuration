@@ -4,16 +4,13 @@ noremap <Left> <NOP>
 noremap <Right> <NOP>
 noremap j }
 noremap k {
-noremap h <NOP>
-noremap l <NOP>
-
 
 nnoremap <silent> <leader>      :<c-u>WhichKey ' '<CR>
 
 nmap <leader>p :bn<CR>
 nmap <leader>n :bp<CR>
-nmap <leader>w :w<CR>
 nmap <leader>S :Snippets<CR>
+nmap <leader>s :w<CR>
 nmap <leader>ff :FZF<CR>
 nmap <leader>rg :Rg<CR>
 nmap <leader>rb :Buffers<CR>

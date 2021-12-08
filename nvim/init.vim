@@ -8,12 +8,15 @@ let g:coc_start_at_startup = v:false
 source $HOME/.config/nvim/modules/plugs_call.vim
 source $HOME/.config/nvim/modules/settings.vim
 source $HOME/.config/nvim/modules/sneak.vim
-source $HOME/.config/nvim/modules/remaps.vim
 source $HOME/.config/nvim/modules/ultisnips.vim
 source $HOME/.config/nvim/modules/look.vim
+source $HOME/.config/nvim/modules/vimwiki.vim
 
 lua require('language_servers')
 lua require('cmp_completion')
+lua require('scroll')
+
+source $HOME/.config/nvim/modules/remaps.vim
 
 au FileType python setlocal formatprg=autopep8\ -
 

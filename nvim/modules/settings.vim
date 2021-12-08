@@ -7,7 +7,7 @@ if &compatible
   set nocompatible
 endif
 
-set scrolloff=10
+set scrolloff=20
 set nohlsearch
 set noerrorbells 
 set cursorline 

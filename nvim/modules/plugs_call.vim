@@ -10,6 +10,8 @@ call plug#begin('~/.config/nvim/pluggin')
 
     Plug 'neovim/nvim-lspconfig'
 
+    Plug 'karb94/neoscroll.nvim'
+
     Plug 'onsails/lspkind-nvim'
     Plug 'hrsh7th/nvim-cmp'
     Plug 'hrsh7th/cmp-nvim-lsp'
@@ -27,6 +29,7 @@ call plug#begin('~/.config/nvim/pluggin')
     Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 	Plug 'ghifarit53/tokyonight-vim'
+    " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'dense-analysis/ale'
@@ -53,5 +56,7 @@ call plug#begin('~/.config/nvim/pluggin')
 	Plug 'junegunn/goyo.vim'
 
 	Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+
+    Plug 'vimwiki/vimwiki'
 
 call plug#end()
