@@ -1,4 +1,4 @@
-export PATH=$PATH:$HOME/.config/cargo/bin:$HOME/.local/share/scripts:$HOME/.local/bin
+export PATH=$PATH:$HOME/.config/cargo/bin:$HOME/.local/share/scripts:$HOME/.local/bin:$HOME/.config/bin/
 export LS_COLORS="$(vivid generate ~/.config/vivid/tokyo.yml)"
 export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
 

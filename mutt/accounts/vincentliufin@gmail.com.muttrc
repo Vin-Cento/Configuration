@@ -1,0 +1,20 @@
+# vim: filetype=neomuttrc
+# muttrc file for account vincentliufin@gmail.com
+set realname = "vincentliufin"
+set from = "vincentliufin@gmail.com"
+set sendmail = "msmtp -a vincentliufin@gmail.com"
+alias me vincentliufin <vincentliufin@gmail.com>
+set folder = "/home/vinny/.local/share/mail/vincentliufin@gmail.com"
+set header_cache = /home/vinny/.cache/mutt-wizard/vincentliufin@gmail.com/headers
+set message_cachedir = /home/vinny/.cache/mutt-wizard/vincentliufin@gmail.com/bodies
+set mbox_type = Maildir
+set hostname = "gmail.com"
+source /usr/share/mutt-wizard/switch.muttrc
+set spoolfile = +INBOX
+set postponed = +Drafts
+set trash = +Trash
+set record = +Sent
+
+macro index o "<shell-escape>mw -y vincentliufin@gmail.com<enter>" "run mbsync to sync vincentliufin@gmail.com"
+
+mailboxes "=INBOX" "=Sent" "=Trash" "=[Gmail]/All Mail" "=[Gmail]/Drafts" "=[Gmail]/Important" "=[Gmail]/Sent Mail" "=[Gmail]/Spam" "=[Gmail]/Starred" "=[Gmail]/Trash" "=no-reply" "=reply-fec11676776d0278-40_html-260882943-500009133-92403"

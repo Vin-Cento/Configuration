@@ -55,11 +55,10 @@ setxkbmap -option caps:swapescape
 xwallpaper --zoom $WallpaperPath/peacefulpic.jpg
 pgrep -x sxhkd > /dev/null || sxhkd &
 unclutter &
-picom --config ~/.config/picom/picom.conf --experimental-backends &
+picom --experimental-backends &
 ~/.config/polybar/launch.sh --hack
 
 redshift -l 32.363724:-90.891266 &
 fcitx -d & 
-
 
 exec bspwm

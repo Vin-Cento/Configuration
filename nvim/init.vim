@@ -33,6 +33,7 @@ autocmd FileType tex imap <buffer> <F10> <esc>:w<CR>:exec '!pdflatex' shellescap
 autocmd FileType rust map <buffer> <F10> :w <CR>:exec '!cargo run' shellescape(@%, 1)<CR>
 autocmd FileType rust imap <buffer> <F10> <esc>:w <CR>:exec '!cargo run' shellescape(@%, 1)<CR>
 
+autocmd TextChanged <buffer> silent write
 
 " Put these lines at the very end of your vimrc file.
 

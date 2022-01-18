@@ -2,8 +2,6 @@ noremap <Up> <NOP>
 noremap <Down> <NOP>
 noremap <Left> <NOP>
 noremap <Right> <NOP>
-noremap j }
-noremap k {
 
 nnoremap <silent> <leader>      :<c-u>WhichKey ' '<CR>
 
@@ -24,6 +22,9 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+map <ScrollWheelUp> <C-Y>
+map <ScrollWheelDown> <C-E>
 
 vmap <C-c> "+y<CR>
 

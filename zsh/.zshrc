@@ -30,12 +30,14 @@ complete -C '/usr/bin/aws_completer' aws
 # cd with just Filename
 setopt autocd
 
-ZSHPLUG=/usr/share/zsh/plugins
+# ZSHPLUG=/usr/share/zsh/plugins
+ZSHPLUG=$HOME/.config/zsh/plugins/
 
 source $ZSHPLUG/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSHPLUG/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $ZSHPLUG/zsh-colored-man-pages/zsh-colored-man-pages.zsh
-source $ZSHPLUG/aws_zsh_completer.sh
+source $ZSHPLUG/aws_zsh_completer.zsh
+source $ZSHPLUG/cd_ls.zsh
 
 # vi mode
 bindkey -v
@@ -69,7 +71,7 @@ bindkey -v '^?' backward-delete-char
 # settings
 SPACESHIP_TIME_SHOW=true
 SPACESHIP_TIME_12HR=true
-SPACESHIP_PROMPT_ADD_NEWLINE=true
+SPACESHIP_PROMPT_ADD_NEWLINE=false
 SPACESHIP_PROMPT_SEPARATE_LINE=true
 SPACESHIP_CHAR_SYMBOL=$
 SPACESHIP_CHAR_SUFFIX=" "
@@ -98,7 +100,7 @@ SPACESHIP_TERRAFORM_SHOW=false
 SPACESHIP_TERRAFORM_SHOW=false
 SPACESHIP_VI_MODE_SHOW=false
 SPACESHIP_JOBS_SHOW=true
-SPACESHIP_DIR_TRUNC=1
+SPACESHIP_DIR_TRUNC=3
 
 # using spaceship
 autoload -U promptinit; promptinit
@@ -111,7 +113,7 @@ source /usr/share/fzf/key-bindings.zsh
 ### Personal list of alias ###
 
 # better command alternative
-alias b='bat'
+alias s='bat'
 alias tree='tree --dirsfirst -C'
 alias diff='diff --color'
 alias grep='grep --color'
@@ -148,6 +150,8 @@ alias vs='nvim -o $(find /home/vinny/.config/nvim/pluggin/vim-snippets/snippets 
 alias va='nvim ~/.config/alacritty/alacritty.yml'
 alias gl='git log --all --decorate --graph'
 
+alias b='mpv ~/Musics/Alarm_Clock_Sound_Effect.ogg'
+
 # searches
 
 urlencode () {
@@ -171,3 +175,9 @@ duck () {
 }
 
 alias "d"=duck
+
+eval "$(lua ~/.config/zsh/plugins/z.lua/z.lua --init zsh)"
+eval "$(lua ~/.config/zsh/plugins/z.lua/z.lua --init bash enhanced once)"
+# eval "$(lua ~/.config/zsh/plugins/z.lua/z.lua --init bash enhanced once fzf)"
+
+source /usr/share/nvm/init-nvm.sh

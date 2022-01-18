@@ -1,6 +1,7 @@
 Android Open Source Project
 nvim/pluggin
 nvim/autoload
+nvm
 audacious
 autorandr
 autostart
@@ -14,6 +15,7 @@ citra-emu
 coc
 Code - OSS
 code-oss
+conky*
 configstore
 dconf
 deluge
@@ -33,6 +35,7 @@ Google
 google-chrome
 gtk-2.0
 gtk-3.0
+retroarch
 *history*
 i3
 ibus
@@ -48,6 +51,7 @@ manjaro
 matplotlib
 menus
 Mousepad
+msmtp
 mpv
 neofetch
 pamac
@@ -61,6 +65,7 @@ sc-im
 session
 Slack
 StardewValley
+TabNine
 Thunar
 viewnior
 VirtualBox

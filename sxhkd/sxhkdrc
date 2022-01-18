@@ -6,42 +6,61 @@ XF86AudioLowerVolume
 XF86AudioMute
 	pactl set-sink-mute @DEFAULT_SINK@ toggle
 XF86MonBrightnessUp
-	brightnessctl s 10%+
+	brightnessctl s 5%+
 XF86MonBrightnessDown
-	brightnessctl s 10%-
+	brightnessctl s 5%-
 
 # program launcher
-super + s
-	alacritty -e nvim -o $(find ~/.config/nvim/pluggin/vim-snippets/snippets -type f | fzf)
-super + Return
-	$TERMINAL
+super + {_,shift +}Return 
+    {alacritty, bspc rule -a \* -o state=floating && alacritty}
+
+super + t
+    bspc rule -a \* -o state=floating && alacritty -e nvim ~/Documents/.vimwiki/TODO.md ~/Documents/.vimwiki/Health.md
+
 super + @space
 	dmenu_run -fn 'Mononoki Mono-12'
-super + b
-	brave
-super + shift + b
-	brave --incognito
+
+# super + b
+# 	brave
+
+# super + shift + b
+# 	brave --incognito
+
+super + shift + g
+	chromium --incognito
 super + g
-	google-chrome-stable
+	chromium
+
 super + shift + o
 	libreoffice
+
 super + v
 	virt-manager
+
 super + shift + s
 	slack
-super + w
+
+super + shift+ w
 	networkmanager_dmenu -fn 'Mononoki Mono-12'
+
+super +  m
+	alacritty -e neomutt
+
 super + shift + f
 	alacritty -e lfrun
+
 super + p
 	passmenu -fn 'Mononoki Mono-12'
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
 	pkill -9 "polybar"
-	polybar -r example&
+	bash ~/.config/polybar/launch.sh --hack &
+
 Print
  	flameshot gui -p ~/Downloads/ScreenShots
+
 super + Print
 	sxiv ~/Downloads/ScreenShots
 

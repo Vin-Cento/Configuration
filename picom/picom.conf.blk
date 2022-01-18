@@ -34,7 +34,7 @@ focus-exclude = [ "class_g = 'Cairo-clock'" ];
 #    opacity-rule = [ "80:class_g = 'URxvt'" ];
 #
 # opacity-rule = []
-opacity-rule = [ "50:class_g = 'alacritty'" ];
+opacity-rule = [ "90:class_g = 'alacritty'" ];
 # opacity-rule = [ "50:name *= 'alacritty'" ];
 
 #################################
@@ -50,7 +50,7 @@ opacity-rule = [ "50:class_g = 'alacritty'" ];
 
 # The blur radius for shadows, in pixels. (defaults to 12)
 # shadow-radius = 12
-shadow-radius = 7;
+# shadow-radius = 7;
 
 # The opacity of shadows. (0.0 - 1.0, defaults to 0.75)
 # shadow-opacity = .75
@@ -152,7 +152,7 @@ shadow-exclude = [
 # Sets the radius of rounded window corners. When > 0, the compositor will
 # round the corners of windows. Does not interact well with
 # `transparent-clipping`.
-# corner-radius = 5
+#corner-radius = 0
 
 # Exclude conditions for rounded corners.
 #rounded-corners-exclude = [
@@ -167,12 +167,15 @@ shadow-exclude = [
 
 
 # Parameters for background blurring, see the *BLUR* section for more information.
-# blur-method =
+# blur:
+# {
+#     method = "gaussian";
+#     strength = 20;
+# }
 # blur-size = 12
 #
 # blur-deviation = false
 #
-# blur-strength = 5
 
 # Blur background of semi-transparent / ARGB windows.
 # Bad in performance, with driver-dependent behavior.
@@ -218,8 +221,8 @@ shadow-exclude = [
 # Specify the backend to use: `xrender`, `glx`, or `xr_glx_hybrid`.
 # `xrender` is the default one.
 #
-# backend = "glx"
-backend = "xrender";
+backend = "glx";
+# backend = "xrender";
 
 # Enable/disable VSync.
 # vsync = false
