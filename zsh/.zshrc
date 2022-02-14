@@ -112,7 +112,7 @@ source /usr/share/fzf/key-bindings.zsh
 
 ### Personal list of alias ###
 
-# better command alternative
+    # better command alternative
 alias s='bat'
 alias tree='tree --dirsfirst -C'
 alias diff='diff --color'
@@ -125,7 +125,7 @@ alias openvpn='sudo openvpn'
 alias docker='sudo docker'
 alias kill='sudo kill'
 
-# faster
+    # faster
 alias l='exa --icons -lh --group-directories-first'
 alias ll='exa --icons -lh --grid --group-directories-first'
 alias la='exa --icons --group-directories-first -lah --grid'
@@ -136,12 +136,6 @@ alias ca='clear && la'
 alias f='lf'
 alias t='tree -d -L 4'
 alias p='ipython'
-
-# custom
-alias tc='tar zcvf'
-alias tx='tar zxvf'
-
-# quick config
 alias vv='nvim $(rg --hidden -l "" ~/.config/nvim | fzf)'
 alias vw='nvim ~/Documents/.vimwiki/index.md'
 alias vz='nvim ~/.config/zsh/.zshrc'
@@ -149,11 +143,12 @@ alias vk='nvim ~/.config/sxhkd/sxhkdrc'
 alias vs='nvim -o $(find /home/vinny/.config/nvim/pluggin/vim-snippets/snippets -type f | fzf)'
 alias va='nvim ~/.config/alacritty/alacritty.yml'
 alias gl='git log --all --decorate --graph'
-
 alias b='mpv ~/Musics/Alarm_Clock_Sound_Effect.ogg'
+alias tc='tar zcvf'
+alias tx='tar zxvf'
+
 
 # searches
-
 urlencode () {
     declare str="$*"
     declare encoded=""
@@ -180,4 +175,5 @@ eval "$(lua ~/.config/zsh/plugins/z.lua/z.lua --init zsh)"
 eval "$(lua ~/.config/zsh/plugins/z.lua/z.lua --init bash enhanced once)"
 # eval "$(lua ~/.config/zsh/plugins/z.lua/z.lua --init bash enhanced once fzf)"
 
-source /usr/share/nvm/init-nvm.sh
+# uncomment when using node
+# source /usr/share/nvm/init-nvm.sh

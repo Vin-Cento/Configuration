@@ -3,22 +3,22 @@ window:
     x: 10 
     y: 10 
   dynamic_padding: true
-
+  opacity: 0.85
 
 font:
 
     normal:
-        family: Mononoki Nerd Font
+        family: Source Code Pro
         style: Regular
         
     bold:
-        family: Mononoki Nerd Font
+        family: Source Code Pro
         style: Bold
 
     italic:
-        family: Mononoki Nerd Font
+        family: Source Code Pro
         style: Italic
-    size: 7
+    size: 5.7
 
 draw_bold_text_with_bright_colors: true
 
@@ -89,11 +89,6 @@ schemes:
 
 colors: *tokyo-night
 draw_bold_text_with_bright_colors: true
-
-
-background_opacity: 0.85
-# background_opacity: 0.95
-# background_opacity: 1
 
 selection:
     save_to_clipboard: true

@@ -82,6 +82,8 @@
 #  Default: None
 # c.InteractiveShellApp.matplotlib = None
 
+c.InlineBackend.rc.update({"figure.figsize":(15.0,12.0)})
+
 # Run the module as a script.
 #  Default: ''
 # c.InteractiveShellApp.module_to_run = ''

@@ -54,6 +54,24 @@ core:
     foreground: cyan
     background: darkgray
 
+  file_with_capability:
+    {}
+
+  multi_hard_link:
+    {}
+
+  setuid:
+    {}
+
+  setgid:
+    {}
+
+  reset_to_normal:
+    {}
+
+  door: 
+    {}
+
   normal_text:
     {}
 
