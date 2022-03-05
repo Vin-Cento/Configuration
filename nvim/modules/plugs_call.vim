@@ -8,28 +8,29 @@ endif
 
 call plug#begin('~/.config/nvim/pluggin')
 
-    Plug 'neovim/nvim-lspconfig'
+  Plug 'neovim/nvim-lspconfig'
+	Plug 'williamboman/nvim-lsp-installer'
+	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-    Plug 'karb94/neoscroll.nvim'
 
-    Plug 'onsails/lspkind-nvim'
-    Plug 'hrsh7th/nvim-cmp'
-    Plug 'hrsh7th/cmp-nvim-lsp'
-    Plug 'hrsh7th/cmp-buffer'
-    Plug 'hrsh7th/cmp-path'
-    Plug 'hrsh7th/cmp-cmdline'
-    Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
-
-    " For vsnip users.
-    " Plug 'hrsh7th/cmp-vsnip'
-    " Plug 'hrsh7th/vim-vsnip'
-
-    " For ultisnips users.
-    Plug 'SirVer/ultisnips'
-    Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+  Plug 'karb94/neoscroll.nvim'
+ 
+  Plug 'onsails/lspkind-nvim'
+  Plug 'hrsh7th/nvim-cmp'
+  Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/cmp-path'
+  Plug 'hrsh7th/cmp-cmdline'
+  Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
+ 
+  " For vsnip users.
+  " Plug 'hrsh7th/cmp-vsnip'
+ 
+  " For ultisnips users.
+  Plug 'SirVer/ultisnips'
+  Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 	Plug 'ghifarit53/tokyonight-vim'
-    " Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'dense-analysis/ale'

@@ -74,8 +74,8 @@ cmp.setup({
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
     },
     sources = cmp.config.sources({
-        { name = 'cmp_tabnine' },
         { name = 'ultisnips' }, -- For ultisnips users.
+        { name = 'cmp_tabnine', Keyword_length=4},
         { name = 'buffer' },
         { name = 'path' },
         { name = 'nvim_lsp' },

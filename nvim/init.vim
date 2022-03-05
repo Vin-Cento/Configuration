@@ -2,19 +2,20 @@ filetype plugin indent on
 syntax on
 
 let g:mapleader=' '
-let g:ale_enabled = 0
+let g:ale_enabled = 1
 let g:coc_start_at_startup = v:false
 
 source $HOME/.config/nvim/modules/plugs_call.vim
 source $HOME/.config/nvim/modules/settings.vim
 source $HOME/.config/nvim/modules/sneak.vim
 source $HOME/.config/nvim/modules/ultisnips.vim
-source $HOME/.config/nvim/modules/look.vim
+source $HOME/.config/nvim/modules/themes.vim
 source $HOME/.config/nvim/modules/vimwiki.vim
 
 lua require('language_servers')
 lua require('cmp_completion')
 lua require('scroll')
+lua require('tree_sitter')
 
 source $HOME/.config/nvim/modules/remaps.vim
 

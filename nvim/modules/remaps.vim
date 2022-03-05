@@ -5,17 +5,23 @@ noremap <Right> <NOP>
 
 nnoremap <silent> <leader>      :<c-u>WhichKey ' '<CR>
 
-nmap <leader>p :bn<CR>
-nmap <leader>n :bp<CR>
-nmap <leader>S :Snippets<CR>
-nmap <leader>s :w<CR>
-nmap <leader>ff :FZF<CR>
-nmap <leader>rg :Rg<CR>
-nmap <leader>rb :Buffers<CR>
-nmap <leader>rh :History<CR>
-nmap <leader>bd :bdelete!<CR>
-nmap <leader>q :q!<CR>
-nmap <leader>sudo :w !sudo tee % <CR><CR>
+nnoremap <leader>p :bn<CR>
+nnoremap <leader>n :bp<CR>
+nnoremap <leader>S :Snippets<CR>
+nnoremap <leader>s :w<CR>
+nnoremap <leader>ff :FZF<CR>
+nnoremap <leader>rg :Rg<CR>
+nnoremap <leader>rb :Buffers<CR>
+nnoremap <leader>rh :History<CR>
+nnoremap <leader>bd :bdelete!<CR>
+nnoremap <leader>q :q!<CR>
+nnoremap <leader>sudo :w !sudo tee % <CR><CR>
+
+nnoremap j jzzzv
+nnoremap k kzzzv
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
 
 " window moving
 map <C-h> <C-w>h
@@ -44,11 +50,11 @@ nmap <leader>a :ALEToggle<CR>
 " nmap <silent> gd <Plug>(coc-definition)
 " nmap <silent> gy <Plug>(coc-type-definition)
 " nmap <silent> gi <Plug>(coc-implementation)
-" nmap <silent> gr <Plug>(coc-references)
+" nmap <silent> <leader>gr <Plug>(coc-references)
 
 
 map <leader>t :NERDTreeToggle<CR>
 
 " Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
+" nnoremap <silent> K :call <SID>show_documentation()<CR>
 
