@@ -110,6 +110,20 @@ prompt spaceship
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
 
+
+string2arg() {
+    export arg_filename=$(cut -d":" -f1 <<< $1);
+    export arg_linenum=$(cut -d":" -f2 <<< $1);
+    min_offset=25
+    let max_offset="min_offset*3"
+    min=0
+    if (($min_offset < $arg_linenum)); then
+        let min="arg_linenum-$min_offset"
+    fi
+    let max="arg_linenum+$max_offset"
+    bat --color=always --highlight-line $arg_linenum --style=header,grid,numbers --line-range $min:$max $arg_filename;
+}
+
 ### Personal list of alias ###
 
     # better command alternative
@@ -147,33 +161,18 @@ alias b='mpv ~/Musics/Alarm_Clock_Sound_Effect.ogg'
 alias tc='tar zcvf'
 alias tx='tar zxvf'
 
+alias fsearch='rg . -n -g "!*.html" | fzf --preview="source ~/string2arg.sh; string2arg {}"'
+alias ff='export vfile=$(fsearch);nvim +$(cut -d":" -f2 <<< $vfile) $(cut -d":" -f1 <<< $vfile)'
 
-# searches
-urlencode () {
-    declare str="$*"
-    declare encoded=""
-    declare i c x
-    for (( i=0; i<${#str}; i++ )) do
-        c=${str:$i:1}
-        case "$c" in
-            [-_.!~a-zA-Z0-9] ) x="$c" ;;
-            * ) printf -v x '%%%2x' "'$c" ;;
-        esac
-        encoded+="$x"
-    done
-    echo "$encoded"
-}
-
-duck () {
-    declare url=$(urlencode "$*")
-    lynx "https://duckduckgo.com/lite?q=$url"
-}
-
-alias "d"=duck
 
 eval "$(lua ~/.config/zsh/plugins/z.lua/z.lua --init zsh)"
 eval "$(lua ~/.config/zsh/plugins/z.lua/z.lua --init bash enhanced once)"
-# eval "$(lua ~/.config/zsh/plugins/z.lua/z.lua --init bash enhanced once fzf)"
+_SILENT_JAVA_OPTIONS="$_JAVA_OPTIONS" && unset _JAVA_OPTIONS && alias java='java "$_SILENT_JAVA_OPTIONS"'
 
 # uncomment when using node
 # source /usr/share/nvm/init-nvm.sh
+# source "/home/vinny/.sdkman/bin/sdkman-init.sh"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$XDG_DATA_HOME/.sdkman"
+[[ -s "$XDG_DATA_HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$XDG_DATA_HOME/.sdkman/bin/sdkman-init.sh"
