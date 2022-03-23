@@ -75,7 +75,7 @@ cmp.setup({
     },
     sources = cmp.config.sources({
         { name = 'ultisnips' }, -- For ultisnips users.
-        { name = 'cmp_tabnine', Keyword_length=4},
+        { name = 'cmp_tabnine', Keyword_length=10},
         { name = 'buffer' },
         { name = 'path' },
         { name = 'nvim_lsp' },

@@ -1,4 +1,3 @@
-settings.defaultSearchEngine = 'd';
 /*settings.blocklistPattern = /.*ipynb/i;*/
 
 // Doom One
@@ -9,6 +8,15 @@ api.Hints.style('border: solid 2px #282C34; color:#B9F27C; background: initial; 
 api.Hints.style("border: solid 2px #282C34 !important; padding: 1px !important; color: #51AFEF !important; background: #2E3440 !important;", "text");
 api.Visual.style('marks', 'background-color: #98be6599;');
 api.Visual.style('cursor', 'background-color: #51AFEF;');
+
+api.addSearchAlias('n', 'searx', 'https://searx-private-search.de/search?q=', 's','https://searx-private-search.de/search?q=', function(response) {
+    var res = JSON.parse(response.text);
+    return res.map(function(r){
+        return r.phrase;
+    });
+});
+
+settings.defaultSearchEngine = 'n';
 
 settings.theme = `
 /* Edit these variables for easy theme making */

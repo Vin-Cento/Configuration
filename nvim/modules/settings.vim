@@ -18,9 +18,9 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=2
 
-" set tabstop=4 softtabstop=4
-" set shiftwidth=4
-" set expandtab
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
 
 set relativenumber
 set nu
@@ -34,3 +34,6 @@ set smartindent
 set ignorecase
 
 set completeopt=menu,menuone,noselect
+" set timeoutlen=
+
+" au BufWritePost <buffer> lua require('lint').try_lint()

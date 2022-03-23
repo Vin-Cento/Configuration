@@ -8,56 +8,55 @@ endif
 
 call plug#begin('~/.config/nvim/pluggin')
 
-  Plug 'neovim/nvim-lspconfig'
+    Plug 'tpope/vim-commentary'
+
+	Plug 'neovim/nvim-lspconfig'
 	Plug 'williamboman/nvim-lsp-installer'
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 
-  Plug 'karb94/neoscroll.nvim'
- 
-  Plug 'onsails/lspkind-nvim'
-  Plug 'hrsh7th/nvim-cmp'
-  Plug 'hrsh7th/cmp-nvim-lsp'
-  Plug 'hrsh7th/cmp-buffer'
-  Plug 'hrsh7th/cmp-path'
-  Plug 'hrsh7th/cmp-cmdline'
-  Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
- 
-  " For vsnip users.
-  " Plug 'hrsh7th/cmp-vsnip'
- 
-  " For ultisnips users.
-  Plug 'SirVer/ultisnips'
-  Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+    Plug 'karb94/neoscroll.nvim'
 
-	Plug 'ghifarit53/tokyonight-vim'
+    Plug 'onsails/lspkind-nvim'
+    Plug 'hrsh7th/nvim-cmp'
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'hrsh7th/cmp-buffer'
+    Plug 'hrsh7th/cmp-path'
+    Plug 'hrsh7th/cmp-cmdline'
+    Plug 'tzachar/cmp-tabnine', { 'do': './install.sh' }
 
-	Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	Plug 'dense-analysis/ale'
+    " For ultisnips users.
+    Plug 'SirVer/ultisnips'
+    Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
-	Plug 'rust-lang/rust.vim'
-	
-	Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-	Plug 'junegunn/fzf.vim'
 
-	Plug 'tpope/vim-commentary'
-	Plug 'tpope/vim-surround'
-	Plug 'justinmk/vim-sneak'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+    Plug 'junegunn/fzf.vim'
 
-	Plug 'preservim/nerdtree' 
-	Plug 'mhinz/vim-startify'
+    Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-surround'
+    Plug 'justinmk/vim-sneak'
 
-	Plug 'norcalli/nvim-colorizer.lua'
-	Plug 'sheerun/vim-polyglot'
+    Plug 'norcalli/nvim-colorizer.lua'
 
-	Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes' 
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes' 
 
-	Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+    Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 
-	Plug 'junegunn/goyo.vim'
+    Plug 'junegunn/goyo.vim'
 
-	Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+    Plug 'SirVer/ultisnips' 
+    Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
     Plug 'vimwiki/vimwiki'
+
+    Plug 'nvim-lua/telescope.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-lua/popup.nvim'
+    "
+    Plug 'kyazdani42/nvim-web-devicons'
+    Plug 'simrat39/symbols-outline.nvim'
+
 
 call plug#end()

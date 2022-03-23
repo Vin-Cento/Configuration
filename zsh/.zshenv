@@ -39,7 +39,8 @@ export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export ZDOTDIR=$HOME/.config/zsh
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/ripgreprc"
 
-# export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
-export FZF_DEFAULT_COMMAND="fd --type file --color=always"
-export FZF_DEFAULT_OPTS="--reverse --inline-info --ansi"
-export FZF_COMPLETION_TRIGGER=']]'
+# export FZF_DEFAULT_COMMAND='rg --hidden -l --color=always'
+# export FZF_DEFAULT_COMMAND="fd --type file --color=always"
+# export FZF_DEFAULT_OPTS="--reverse --inline-info --ansi"
+# export FZF_DEFAULT_OPTS="--hidden"
+# export FZF_COMPLETION_TRIGGER=']]'

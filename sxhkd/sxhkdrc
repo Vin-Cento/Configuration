@@ -11,11 +11,13 @@ XF86MonBrightnessDown
 	brightnessctl s 5%-
 
 # program launcher
-super + {_,shift +}Return 
-    {alacritty, bspc rule -a \* -o state=floating && alacritty}
+super + Return 
+    alacritty
+super + e
+    alacritty -e nvim
 
 super + t
-    bspc rule -a \* -o state=floating && alacritty -e nvim ~/Documents/.vimwiki/TODO.md ~/Documents/.vimwiki/Health.md
+    bspc rule -a \* -o state=floating && alacritty -e nvim ~/Documents/.vimwiki/TODO.md ~/Documents/.vimwiki/inflection.md
 
 super + @space
 	dmenu_run -fn 'Mononoki Mono-12'
@@ -34,7 +36,7 @@ super + g
 super + shift + o
 	libreoffice
 
-super + v
+super + shift + v
 	virt-manager
 
 super + shift + s

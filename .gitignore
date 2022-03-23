@@ -1,7 +1,12 @@
+gh/*
 mycli/.mycli.log
 pgcli/log
 Android Open Source Project
 nvm
+nvim/pluggin
+nvim/autoload
+nvim/pack
+nvim/plugin
 audacious
 autorandr
 autostart

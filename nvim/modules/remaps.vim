@@ -7,21 +7,27 @@ nnoremap <silent> <leader>      :<c-u>WhichKey ' '<CR>
 
 nnoremap <leader>p :bn<CR>
 nnoremap <leader>n :bp<CR>
+nnoremap <leader>bd :bdelete<CR>
 nnoremap <leader>S :Snippets<CR>
-nnoremap <leader>s :w<CR>
-nnoremap <leader>ff :FZF<CR>
-nnoremap <leader>rg :Rg<CR>
-nnoremap <leader>rb :Buffers<CR>
-nnoremap <leader>rh :History<CR>
-nnoremap <leader>bd :bdelete!<CR>
+nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q!<CR>
 nnoremap <leader>sudo :w !sudo tee % <CR><CR>
 
+nnoremap <leader>t :NvimTreeToggle<CR>
+nnoremap <leader>s :SymbolsOutline<CR>
+
+" nnoremap <leader><CR> :FloatermNew lfrun<CR>
+nnoremap <leader><CR> :FloatermNew --height=0.6 --width=0.4 --wintype=float --name=floaterm1 --position=topleft --autoclose=2 lfrun<CR>
+
 nnoremap j jzzzv
 nnoremap k kzzzv
+nnoremap J }
+nnoremap K {
+
 nnoremap n nzzzv
 nnoremap N Nzzzv
-nnoremap J mzJ`z
+nnoremap ; :
+nnoremap : ;
 
 " window moving
 map <C-h> <C-w>h
@@ -34,27 +40,12 @@ map <ScrollWheelDown> <C-E>
 
 vmap <C-c> "+y<CR>
 
-nnoremap <leader>sv :source $MYVIMRC<CR>
-
-" map <leader><leader> :Goyo \| set linebreak<CR>
- map <leader><leader> :Goyo<CR>
-
-nmap <leader>a :ALEToggle<CR>
-
-" " Use `[g` and `]g` to navigate diagnostics
-" " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-" nmap <silent> [g <Plug>(coc-diagnostic-prev)
-" nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" " GoTo code navigation.
-" nmap <silent> gd <Plug>(coc-definition)
-" nmap <silent> gy <Plug>(coc-type-definition)
-" nmap <silent> gi <Plug>(coc-implementation)
-" nmap <silent> <leader>gr <Plug>(coc-references)
-
-
-map <leader>t :NERDTreeToggle<CR>
-
-" Use K to show documentation in preview window.
-" nnoremap <silent> K :call <SID>show_documentation()<CR>
-
+nnoremap <silent> <leader>dc :lua require'dap'.continue()<CR>
+nnoremap <silent> <leader>dso :lua require'dap'.step_over()<CR>
+nnoremap <silent> <leader>dsi :lua require'dap'.step_into()<CR>
+nnoremap <silent> <leader>dsq :lua require'dap'.step_out()<CR>
+nnoremap <silent> <leader>b :lua require'dap'.toggle_breakpoint()<CR>
+nnoremap <silent> <leader>B :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>
+nnoremap <silent> <leader>dp :lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>
+nnoremap <silent> <leader>dr :lua require'dap'.repl.open()<CR>
+nnoremap <silent> <leader>dl :lua require'dap'.run_last()<CR>
