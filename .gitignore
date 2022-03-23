@@ -1,7 +1,7 @@
 xbacklight-ctl
-gh/*
-mycli/.mycli.log
-pgcli/log
+gh
+mycli
+pgcli
 Android Open Source Project
 nvm
 nvim/pluggin
