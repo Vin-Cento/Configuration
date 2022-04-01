@@ -107,8 +107,8 @@ autoload -U promptinit; promptinit
 prompt spaceship
 
 # fzf setup
-source /usr/share/fzf/completion.zsh
-source /usr/share/fzf/key-bindings.zsh
+source $ZDOTDIR/plugins/fzf/completion.zsh
+source $ZDOTDIR/plugins/fzf/key-bindings.zsh
 
 
 string2arg() {
