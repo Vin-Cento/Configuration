@@ -12,21 +12,24 @@ configuration {
 
 * {
   bg: #11121D;
-  bg-alt: #444b6a;
+  bg-alt: #452b94;
+  bg-alt-alt: #444B6AAA;
+  bg-blur: #444B6AAA;
 
-  fg: #FFFFFF;
-  fg-alt: #787c99;
+  fg: #8B008B;
+  fg-alt: #FFFFFF;
 
   background-color: @bg;
   
   border: 0;
   margin: 0;
-  padding: 0;
+  padding: 5;
   spacing: 0;
+  opacity: 100;
 }
 
 window {
-  width: 30%;
+  width: 50%;
 }
 
 element {
@@ -45,11 +48,11 @@ element-text {
 }
 
 element-icon {
-  size: 30;
+  size: 20;
 }
 
 entry {
-  background-color: @bg-alt;
+  background-color: @bg-alt-alt;
   padding: 12;
   text-color: @fg;
 }
@@ -66,15 +69,15 @@ listview {
 }
 
 mainbox {
-  background-color: @bg;
+  background-color: @bg-blur;
   children: [inputbar, listview];
 }
 
 prompt {
-  background-color: @bg-alt;
+  background-color: @bg-alt-alt;
   enabled: true;
   padding: 12 0 0 12;
-  text-color: @fg;
+  text-color: @fg-alt;
 }
 
 /* vim: ft=sass

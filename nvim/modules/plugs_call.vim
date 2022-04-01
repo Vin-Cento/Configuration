@@ -8,7 +8,9 @@ endif
 
 call plug#begin('~/.config/nvim/pluggin')
 
+
     Plug 'tpope/vim-commentary'
+    Plug 'jiangmiao/auto-pairs'
 
 	Plug 'neovim/nvim-lspconfig'
 	Plug 'williamboman/nvim-lsp-installer'
@@ -27,6 +29,7 @@ call plug#begin('~/.config/nvim/pluggin')
 
     " For ultisnips users.
     Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
     Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 

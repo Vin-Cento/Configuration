@@ -13,20 +13,20 @@ XF86MonBrightnessDown
 # program launcher
 super + Return 
     alacritty
-super + e
+
+super + v
     alacritty -e nvim
 
 super + t
-    bspc rule -a \* -o state=floating && alacritty -e nvim ~/Documents/.vimwiki/TODO.md ~/Documents/.vimwiki/inflection.md
+    bspc rule -a \* -o state=floating && alacritty -e nvim ~/Documents/.vimwiki/TODO.md
 
 super + @space
-	dmenu_run -fn 'Mononoki Mono-12'
+	rofi -show drun
 
-# super + b
-# 	brave
+super + shift + j
+    bspc rule -a \* -o state=floating && alacritty -e nvim ~/Documents/.vimwiki/Journal.md
+    
 
-# super + shift + b
-# 	brave --incognito
 
 super + shift + g
 	chromium --incognito
@@ -144,6 +144,10 @@ super + {o,i}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
+escape + a
+    bsp desktop -f '^{1}'
+
+
 #
 # move/resize
 #
@@ -159,3 +163,8 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+
+# TODO
+alt + @space
+    rofi -modi file-browser-extended -show file-browser-extended -file-browser-depth 10 -file-browser-dir ~/ -file-browser-only-files -file-browser-hide-parent

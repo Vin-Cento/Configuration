@@ -16,5 +16,6 @@ return require('packer').startup(function()
     use 'terrortylor/nvim-comment'
     use 'kyazdani42/nvim-tree.lua'
     use 'yashguptaz/calvera-dark.nvim'
+    use 'ahmedkhalf/lsp-rooter.nvim'
 
 end)

@@ -17,7 +17,7 @@ nnoremap <leader>t :NvimTreeToggle<CR>
 nnoremap <leader>s :SymbolsOutline<CR>
 
 " nnoremap <leader><CR> :FloatermNew lfrun<CR>
-nnoremap <leader><CR> :FloatermNew --height=0.6 --width=0.4 --wintype=float --name=floaterm1 --position=topleft --autoclose=2 lfrun<CR>
+" nnoremap <leader><CR> :FloatermNew --height=0.6 --width=0.4 --wintype=float --name=floaterm1 --position=topleft --autoclose=0 python %<CR><CR>
 
 nnoremap j jzzzv
 nnoremap k kzzzv

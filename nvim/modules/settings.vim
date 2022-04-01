@@ -34,6 +34,7 @@ set smartindent
 set ignorecase
 
 set completeopt=menu,menuone,noselect
+
 " set timeoutlen=
 
 " au BufWritePost <buffer> lua require('lint').try_lint()
